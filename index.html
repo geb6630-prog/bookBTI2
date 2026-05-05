@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 북BTI 테스트</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- html2canvas 라이브러리 추가 -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="app-container">
+    
+    <!-- 시작 화면 -->
+    <section id="start-screen" class="screen active">
+      <div class="header-content">
+        <h1>📚 숨겨왔던 나의 은밀한 독서취향 알아보기</h1>
+        <p class="subtitle">너도 모르고 있던 북BTI...궁금하지 않아?</p>
+      </div>
+      <div class="illustration">
+        <!-- 텍스트 이모지로 일러스트 대체 -->
+        <span class="main-emoji">🤔📖✨</span>
+      </div>
+      <button id="start-btn" class="primary-btn">테스트 시작하기</button>
+    </section>
+
+    <!-- 질문 화면 -->
+    <section id="question-screen" class="screen">
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div class="question-header">
+        <span id="question-number">Q1.</span>
+      </div>
+      <h2 id="question-text">질문 텍스트가 여기에 들어갑니다.</h2>
+      <div id="options-container">
+        <!-- 옵션 버튼들이 여기에 동적으로 생성됩니다. -->
+      </div>
+    </section>
+
+    <!-- 로딩 화면 -->
+    <section id="loading-screen" class="screen">
+      <div class="loader"></div>
+      <h2>결과를 분석하고 있습니다...</h2>
+      <p>당신의 독서 성향은 과연?</p>
+    </section>
+
+    <!-- 결과 화면 -->
+    <section id="result-screen" class="screen">
+      <!-- 캡처될 영역 -->
+      <div id="capture-area">
+        <div class="result-header">
+          <h3>당신의 북BTI 유형은</h3>
+          <div id="result-icon" class="result-icon"></div>
+          <h1 id="result-title">유형 이름</h1>
+          <p id="result-catchphrase" class="catchphrase">"캐치프레이즈"</p>
+        </div>
+
+        <div class="result-card">
+          <p id="result-empathy" class="empathy-text">공감 텍스트</p>
+          <div class="divider"></div>
+          <p id="result-intro" class="intro-text">유형 소개</p>
+          
+          <div class="feature-box">
+            <h4>✨ 이런 특징이 있어요</h4>
+            <ul id="result-features">
+              <!-- 특징 리스트 -->
+            </ul>
+          </div>
+
+          <div class="book-recommendation-box">
+            <h4>📚 맞춤형 추천 도서</h4>
+            <p id="result-recommend-reason" class="recommend-reason">추천 이유</p>
+            <div class="starter-book">
+              <span class="badge">⭐ 입문용 추천</span>
+              <h5 id="starter-book-title">입문 책 제목</h5>
+              <p id="starter-book-reason">입문 추천 이유</p>
+            </div>
+            <ul id="result-books" class="book-list">
+              <!-- 나머지 추천 도서들 -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-text">
+          <p>👉 지금 추천된 책 1권만 읽어도,<br>너의 독서는 이미 시작된 거야!</p>
+        </div>
+      </div>
+      
+      <!-- 기능 버튼 영역 (캡처 제외) -->
+      <div class="action-buttons">
+        <button id="download-btn" class="primary-btn">📸 결과 이미지로 다운로드</button>
+        <button id="retry-btn" class="secondary-btn">다시 하기</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
